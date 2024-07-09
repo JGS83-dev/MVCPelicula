@@ -9,5 +9,6 @@ namespace MVCPelicula.Models
         }
 
         public DbSet<Pelicula> Peliculas { get; set; }
+        public DbSet<Genero> Generos { get; set; }
     }
 }
