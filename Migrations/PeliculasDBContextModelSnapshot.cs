@@ -17,7 +17,7 @@ namespace MVCPelicula.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.6")
+                .HasAnnotation("ProductVersion", "8.0.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -37,6 +37,38 @@ namespace MVCPelicula.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Generos");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Nombre = "Comedia"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Nombre = "Romance"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Nombre = "Aventura"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Nombre = "Acción"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Nombre = "Ficción"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Nombre = "Drama"
+                        });
                 });
 
             modelBuilder.Entity("MVCPelicula.Models.Pelicula", b =>
@@ -76,6 +108,38 @@ namespace MVCPelicula.Migrations
                     b.HasIndex("GeneroId");
 
                     b.ToTable("Peliculas");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Director = "Hermanas Wachowski",
+                            FechaLanzamiento = new DateTime(2003, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            GeneroId = 4,
+                            Precio = 10.99m,
+                            Sala = "1",
+                            Titulo = "Matrix recargado"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Director = "Peter Jackson",
+                            FechaLanzamiento = new DateTime(2002, 12, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            GeneroId = 3,
+                            Precio = 11.99m,
+                            Sala = "1",
+                            Titulo = "El señor de los anillos las dos torres"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Director = "Chris Columbus",
+                            FechaLanzamiento = new DateTime(2002, 11, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            GeneroId = 5,
+                            Precio = 9.99m,
+                            Sala = "1",
+                            Titulo = "Harry Potter y la cámara secreta"
+                        });
                 });
 
             modelBuilder.Entity("MVCPelicula.Models.Pelicula", b =>

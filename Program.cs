@@ -6,7 +6,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<PeliculasDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("PeliculasCN")));
+builder.Services.AddDbContext<PeliculasDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("PeliculasCNLocalBDD")));//LocalBDD
+
+//builder.Services.AddDbContext<PeliculasDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("PeliculasCN")));
+
 
 var app = builder.Build();
 
